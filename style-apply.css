@@ -1,0 +1,277 @@
+:root {
+  --jaune: #eef13f;
+  --vert: #80b238;
+  --bleu: #80c1d6;
+  --orange: hsl(13, 99%, 60%);
+}
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  width: 100%;
+  font-family: Atma, sans-serif;
+  background: var(--bleu);
+  text-align: center;
+  color: white;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: var(--vert);
+  z-index: 100;
+  padding: 0.2rem;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+}
+
+li {
+  transition: 1s;
+}
+
+nav li:hover:nth-child(odd) {
+  transform: rotate(5deg) scale(1.5);
+}
+
+nav li:hover:nth-child(even) {
+  transform: rotate(-5deg) scale(1.5);
+}
+
+nav li:last-of-type {
+  font-weight: bold;
+}
+
+ul a {
+  text-decoration: none;
+  color: white;
+}
+
+header {
+  background-image: url(images/blue-splash.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header img {
+  display: inline-block;
+  height: 38rem;
+  width: 38rem;
+  margin: 6rem auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background: var(--bleu);
+  border-top: 7px solid rgba(0, 0, 0, 0.09);
+  border-bottom: 7px solid rgba(0, 0, 0, 0.09);
+}
+
+main section {
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+h2,
+button {
+  font-size: 4rem;
+  text-shadow: 4px 4px 0 rgba(46, 43, 43, 0.295);
+  font-family: Bangers, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.form {
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 100%;
+
+}
+
+.form button{
+  margin: auto;
+  margin-bottom: 6rem ;
+  margin-top: 3rem;
+}
+
+.apply {
+  margin: auto;
+  max-width: 60rem;
+  width: calc(100% - 3rem);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+input {
+  display: block;
+  width: 100%;
+  background: var(--orange);
+  color: var(--jaune);
+  border-radius: 0.7rem;
+  border: none;
+  padding: 1rem;
+  text-align: left;
+}
+
+input:focus {
+  background: var(--jaune);
+  color: var(--orange);
+}
+
+
+button {
+  display: inline-block;
+  height: 10rem;
+  width: 11rem;
+  margin: 5rem;
+  cursor: pointer;
+  background: var(--bleu);
+  background-image: url(images/submit.png);
+  border: none;
+  background: center no-repeat;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  transform: rotate(-8deg);
+  transition: 1s;
+  font-weight: bold;
+:hover {
+  transform: scale(1.5);
+}
+
+table {
+  max-width: 100%;
+  border-spacing: 0;
+
+  width: 1000px;
+  height: 20px;
+}
+td {
+  width: 3vmin;
+  height: 3vmin;
+}
+
+tr:nth-child(2n + 1) td:nth-child(2n + 1) {
+  background: var(--jaune);
+}
+
+tr:nth-child(2n) td:nth-child(2n + 1) {
+  background: var(--bleu);
+}
+
+tr:nth-child(2n) td:nth-child(2n) {
+  background: var(--jaune);
+}
+
+tr:nth-child(2n + 1) td:nth-child(2n) {
+  background: var(--bleu);
+}
+
+nav ul {
+  color: white;
+  list-style: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  position: relative;
+  background: var(--jaune);
+  padding: 2rem;
+  color: black;
+  border-top: 7px solid rgba(0, 0, 0, 0.09);
+  border-bottom: 7px solid rgba(0, 0, 0, 0.09);
+  line-height: 2rem;
+  padding-bottom: 0;
+}
+
+footer img {
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 9rem;
+}
+
+footer h2 {
+  font-size: 3rem;
+  text-align: center;
+  grid-column: 1 / span 2;
+}
+
+footer h3, button {
+  text-align: center;
+  grid-column: 1 / span 2;
+}
+
+.final {
+  margin: auto;
+  max-width: 60rem;
+  width: calc(100% - 3rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+p {
+  text-align: left;
+}
+
+p:nth-of-type(2n + 1) {
+  text-align: right;
+}
+
+@media (max-width: 35em) {
+  html {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media {
+  .apply {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+	body {
+		width: auto;
+		margin: 0;
+		padding: 0;
+  }
+  
+	img,
+	table,
+  td,
+  th,
+	input{
+  max-width: 100%;
+  }
+  
+	img {
+		height: auto;
